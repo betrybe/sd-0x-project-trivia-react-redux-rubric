@@ -23,7 +23,7 @@ jobs:
         uses: betrybe/cypress-evaluator-action@v5
         with:
           repository-test-name: 'betrybe/sd-0x-project-trivia-react-redux-tests'
-          repository-test-branch: 'master'
+          repository-test-branch: 'lucas-tests-update'
           npm-start: true
       - name: Store evaluation step
         uses: betrybe/store-evaluation-action@v2
