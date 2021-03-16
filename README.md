@@ -417,7 +417,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 #### 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
 
-  **PRIORIDADE 0** - Criar a tela de login contendo as informações de nome e email, onde a pessoa que joga deve conseguir escrever seu nome e email nos inputs e o botão de jogar deve estar desabilitado caso não tenha alguma dessas informações.
+  **PRIORIDADE 0** - Criar a tela de login contendo as informações de nome e email, onde a pessoa que joga deve conseguir escrever seu nome e email nos inputs e o botão de jogar ("Play") deve estar desabilitado caso não tenha alguma dessas informações.
   
 Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que os demais possam ser feitos paralelamente!
 
@@ -425,34 +425,34 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * A pessoa que joga deve conseguir escrever seu nome no input de texto
   * A pessoa que joga deve conseguir escrever seu email no input de email
-  * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
+  * O botão "Play" deve ser desabilitado caso email e/ou nome não estejam preenchidos
   * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
   * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
-  * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
+  * O botão "Play" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
 
   **O que será avaliado**
 
   * Será validado se é possível escrever o nome da pessoa jogadora
   * Será validado se é possível escrever o email da pessoa jogadora
-  * Será validado se o botão Jogar está desabilitado quando a pessoa jogadora não preencher nenhum campo
-  * Será validado se o botão Jogar está desabilitado quando a pessoa jogadora escrever apenas o nome
-  * Será validado se o botão Jogar está desabilitado quando a pessoa jogadora escrever apenas o email
-  * Será validado se o botão Jogar está habilitado quando a pessoa jogadora preencher os campos de nome e email
+  * Será validado se o botão "Play" está desabilitado quando a pessoa jogadora não preencher nenhum campo
+  * Será validado se o botão "Play" está desabilitado quando a pessoa jogadora escrever apenas o nome
+  * Será validado se o botão "Play" está desabilitado quando a pessoa jogadora escrever apenas o email
+  * Será validado se o botão "Play" está habilitado quando a pessoa jogadora preencher os campos de nome e email
 
 #### 2. Crie o botão de iniciar o jogo
 
-  **PRIORIDADE 1** - O botão "Jogar" deve fazer requisição para a API para obter o token e redirecionar a pessoa para tela de jogo
+  **PRIORIDADE 1** - O botão "Play" deve fazer requisição para a API para obter o token e redirecionar a pessoa para tela de jogo
 
   **Observações técnicas**
 
-  * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
-  * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
+  * Após clicar no botão "Play", a pessoa deve ser redirecionada para a tela do jogo
+  * Ao clicar no botão "Play", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
   * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
   * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
   **O que será avaliado**
 
-  * Será validado se ao clicar no botão Jogar o jogo é iniciado salvando um token de jogador
+  * Será validado se ao clicar no botão "Play" o jogo é iniciado salvando um token de jogador
 
 #### 3. Crie um botão que leva a pessoa para tela de configuração
 
@@ -570,20 +570,20 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
    * Será validado se os pontos são somados ao acertar uma questão
    * Será validado se os pontos não são somados ao errar uma questão
 
-#### 10. Crie um botão de "próxima" que apareça após a resposta ser dada
+#### 10. Crie um botão de próxima ("next") que apareça após a resposta ser dada
 
-  **PRIORIDADE 3** - Deve aparecer um botão de "Próxima" (pergunta) após a resposta ser dada
+  **PRIORIDADE 3** - Deve aparecer um botão de próxima ("Next") (pergunta) após a resposta ser dada
 
   **Observações técnicas**
 
-  * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
+  * O botão "Next" deve possuir o atributo `data-testid` com o valor `btn-next`
   * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
   **O que será avaliado**
 
-  * Será validado se o botão de próxima pergunta não é visível no início do jogo
-  * Será validado se o botão de próxima pergunta é visível quando a pergunta é respondida corretamente
-  * Será validado se o botão de próxima pergunta é visível quando a pergunta é respondida incorretamente
+  * Será validado se o botão "Next" não é visível no início do jogo
+  * Será validado se o botão "Next" é visível quando a pergunta é respondida corretamente
+  * Será validado se o botão "Next" é visível quando a pergunta é respondida incorretamente
 
 #### 11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total
 
@@ -627,15 +627,15 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **Observações técnicas**
 
-  * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
-  * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
+  * A mensagem deve ser "Could be better..." caso a pessoa acerte menos de 3 perguntas
+  * A mensagem deve ser "Well Done!" caso a pessoa acerte 3 perguntas ou mais
   * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
   **O que será avaliado**
 
-  * Será validado se ao acertar menos de 3 perguntas a mensagem de _feedback_ é "Podia ser melhor..."
-  * Será validado se ao acertar 3 perguntas a mensagem de _feedback_ é "Mandou bem!"
-  * Será validado se ao acertar mais de 3 perguntas a mensagem de _feedback_ é "Mandou bem!"
+  * Será validado se ao acertar menos de 3 perguntas a mensagem de _feedback_ é "Could be better..."
+  * Será validado se ao acertar 3 perguntas a mensagem de _feedback_ é "Well Done!"
+  * Será validado se ao acertar mais de 3 perguntas a mensagem de _feedback_ é "Well Done!"
 
 #### 14. Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária
 
@@ -651,14 +651,14 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 15. Crie a opção para a pessoa jogadora poder jogar novamente
 
-  **PRIORIDADE 3** - A pessoa terá a opção "Jogar novamente", que ao ser clicada, levará para a tela de inicial
+  **PRIORIDADE 3** - A pessoa terá a opção jogar novamente ("Play Again"), que ao ser clicada, levará para a tela de inicial
 
-  * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início (login)
-  * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
+  * Ao clicar no botão "Play Again", a pessoa deve ser redirecionada para a tela de início (login)
+  * O botão para "Play Again" deve possuir o atributo `data-testid` com o valor `btn-play-again`
 
   **O que será avaliado**
 
-  * Será validado se a pessoa é redirecionada para tela inicial ao clicar no botão "Jogar novamente"
+  * Será validado se a pessoa é redirecionada para tela inicial ao clicar no botão "Play Again"
 
 #### 16. Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_
 
@@ -666,13 +666,13 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **Observações técnicas**
 
-  * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
+  * Ao clicar no botão "Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
   * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
   * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
   **O que será avaliado**
 
-  * Será validado se ao clicar no botão "Ver Ranking" a pessoa é redirecionada para tela de ranking
+  * Será validado se ao clicar no botão "Ranking" a pessoa é redirecionada para tela de ranking
 
 ### Tela de ranking
 
