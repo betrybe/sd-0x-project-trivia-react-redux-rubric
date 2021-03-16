@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setPlayerEmail, setPlayerName } from '../redux/action';
+import PlayBtn from '../components/Button';
+import SettingsBtn from '../components/SettingsBtn';
 import logo from '../img/trivia.png';
 import '../App.css';
 
@@ -100,21 +102,8 @@ class Login extends Component {
                 placeholder="Insira seu email"
               />
             </label>
-            <button
-              type="button"
-              data-testid="btn-play"
-              disabled={ !validated }
-              onClick={ this.handlePlayGame }
-            >
-              Jogar
-            </button>
-            <button
-              type="button"
-              data-testid="btn-settings"
-              onClick={ this.handleSettings }
-            >
-              Configuraçoẽs
-            </button>
+            <PlayBtn status={ validated } func={ this.handlePlayGame } />
+            <SettingsBtn func={ this.handleSettings } />
           </form>
         </header>
       </div>

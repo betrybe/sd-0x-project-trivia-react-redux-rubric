@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { savePlayerAtRanking, setNewScore } from '../utils/player';
 import { addAssertion, currentScore, nextQuestion } from '../redux/action';
+import NextBtn from './NextBtn';
 
 class Question extends React.Component {
   constructor() {
@@ -17,10 +18,10 @@ class Question extends React.Component {
     };
 
     this.answerQuestion = this.answerQuestion.bind(this);
-    this.resetConfigs = this.resetConfigs.bind(this);
+    this.reset = this.reset.bind(this);
     this.startTimer = this.startTimer.bind(this);
     this.setFirstQuestion = this.setFirstQuestion.bind(this);
-    this.handleRanking = this.handleRanking.bind(this);
+    this.rank = this.rank.bind(this);
   }
 
   componentDidMount() {
@@ -68,14 +69,13 @@ class Question extends React.Component {
     this.setState({ answered: true }, () => addScore(addPoint));
   }
 
-  // source: https://stackoverflow.com/a/42182294/14424360
   decode(html) {
     const txt = document.createElement('textarea');
     txt.innerHTML = html;
     return txt.value;
   }
 
-  resetConfigs() {
+  reset() {
     const { handleNextQuestion, questions, questionIndex } = this.props;
     const { timerIntervalId } = this.state;
     clearInterval(timerIntervalId);
@@ -90,7 +90,7 @@ class Question extends React.Component {
     });
   }
 
-  handleRanking() {
+  rank() {
     savePlayerAtRanking();
     this.setState({ currQuestion: undefined });
   }
@@ -138,15 +138,7 @@ class Question extends React.Component {
           {this.decode(correctAnswer)}
         </button>
         {answered && (
-          <button
-            type="button"
-            data-testid="btn-next"
-            onClick={ isLastQuestion
-              ? this.handleRanking
-              : this.resetConfigs }
-          >
-            Próxima
-          </button>
+          <NextBtn func={ this.rank } func2={ this.reset } check={ isLastQuestion } />
         )}
       </div>
     );
