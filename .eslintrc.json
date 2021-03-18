@@ -10,5 +10,8 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react", "sonarjs"]
+  "plugins": ["react", "sonarjs"],
+  "rules": {
+    "no-underscore-dangle": ["off"]
+  }
 }
