@@ -27,7 +27,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-jobs:
   evaluator_job:
     runs-on: ubuntu-18.04
     name: Evaluator job
