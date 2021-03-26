@@ -361,13 +361,13 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 
 ### Usando o Trello como ferramenta kanban
 
-Uma forma para seu grupo organizar as atividades e dividir as tarefas é através de um modelo de kanban. A Trybe disponibiliza um [board pré-configurado para vocês](https://trello.com/b/5mll8GFM/trivia-react-redux) duplicarem no [Trello](https://trello.com/).
+Uma forma para seu grupo organizar as atividades e dividir as tarefas é através de um modelo de kanban. A Trybe disponibiliza um [board pré-configurado para vocês](https://trello.com/b/uqNKeveW/front-end-projeto-trivia) duplicarem no [Trello](https://trello.com/).
 
 ![img](trello.gif)
 
 Para duplicar, basta seguir os passos:
 
-- Acesse o [link do board](https://trello.com/b/5mll8GFM/trivia-react-redux)
+- Acesse o [link do board](https://trello.com/b/uqNKeveW/front-end-projeto-trivia)
 - Abra o menu no canto superior direito
 - Selecione "copiar quadros"
 - Defina o time do seu grupo e um título para o board
