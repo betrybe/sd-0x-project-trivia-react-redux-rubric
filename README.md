@@ -695,7 +695,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 17. Crie a tela de _ranking_
 
-  **PRIORIDADE 1** - A tela de ranking deve possuir uma lista com a imagem, nome e pontuação das pessoas que jogaram e deve ficar armazenado no localStorage
+  **PRIORIDADE 2** - A tela de ranking deve possuir uma lista com a imagem, nome e pontuação das pessoas que jogaram e deve ficar armazenado no localStorage
 
   **Observações técnicas**
 
