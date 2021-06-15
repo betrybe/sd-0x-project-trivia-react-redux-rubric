@@ -1,124 +1,103 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setPlayerEmail, setPlayerName } from '../redux/action';
-import PlayBtn from '../components/Button';
-import SettingsBtn from '../components/SettingsBtn';
-import logo from '../img/trivia.png';
-import '../App.css';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import getToken from '../services/apis/getToken';
+import { saveName } from '../redux/actions';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
       email: '',
-      validated: false,
-      shouldRedirectGame: false,
-      shouldRedirectSettings: false,
+      userName: '',
+      isDisabled: true,
     };
-
     this.handleChange = this.handleChange.bind(this);
-    this.handlePlayGame = this.handlePlayGame.bind(this);
-    this.handleSettings = this.handleSettings.bind(this);
-    this.verifyInputs = this.verifyInputs.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.goToPage = this.goToPage.bind(this);
+    this.checkValidity = this.checkValidity.bind(this);
   }
 
-  verifyInputs() {
-    const { name, email } = this.state;
-    if (name && email) {
-      this.setState({ validated: true });
-    } else { this.setState({ validated: false }); }
+  componentWillUnmount() {
+    const ranking = localStorage.getItem('ranking');
+    if (ranking === null) {
+      localStorage.setItem('ranking', JSON.stringify([]));
+    }
   }
 
   handleChange({ target: { name, value } }) {
-    this.setState({ [name]: value }, this.verifyInputs);
+    this.setState({ [name]: value });
+    this.checkValidity();
   }
 
-  async handlePlayGame() {
-    const { email, name } = this.state;
-    const { handlePlayerName, handlePlayerEmail } = this.props;
-    const request = await fetch('https://opentdb.com/api_token.php?command=request');
-    const { token } = await request.json();
-    localStorage.setItem('token', token);
-
-    const player = {
-      name,
-      assertions: 0,
-      score: 0,
-      gravatarEmail: email,
-    };
-
-    handlePlayerName(name);
-    handlePlayerEmail(email);
-    localStorage.setItem('state', JSON.stringify({ player }));
-    this.setState({ shouldRedirectGame: true });
+  checkValidity() {
+    const { userName, email } = this.state;
+    if (userName.length > 0 && email.length > 0) {
+      this.setState({ isDisabled: false });
+    } else if (userName.length === 0 || email.length === 0) {
+      this.setState({ isDisabled: true });
+    }
   }
 
-  handleSettings() {
-    this.setState({ shouldRedirectSettings: true });
+  async handleSubmit() {
+    const { history } = this.props;
+    const { saveNamePlayer } = this.props;
+    const { userName } = this.state;
+    saveNamePlayer(userName);
+    await getToken();
+    history.push('/game-page');
+  }
+
+  goToPage() {
+    const { history } = this.props;
+    history.push('./Config');
   }
 
   render() {
-    const {
-      validated,
-      name,
-      email,
-      shouldRedirectGame,
-      shouldRedirectSettings,
-    } = this.state;
-
-    if (shouldRedirectGame) return <Redirect to="/game" />;
-    if (shouldRedirectSettings) return <Redirect to="/settings" />;
-
+    const { email, userName, isDisabled } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={ logo } className="App-logo" alt="logo" />
-          <p>
-            SUA VEZ
-          </p>
-          <form>
-            <label htmlFor="loginName">
-              <input
-                id="loginName"
-                name="name"
-                data-testid="input-player-name"
-                type="text"
-                value={ name }
-                onChange={ this.handleChange }
-                placeholder="Insira seu Nome"
-              />
-            </label>
-            <label htmlFor="loginEmail">
-              <input
-                id="loginEmail"
-                name="email"
-                data-testid="input-gravatar-email"
-                type="email"
-                value={ email }
-                onChange={ this.handleChange }
-                placeholder="Insira seu email"
-              />
-            </label>
-            <PlayBtn status={ validated } func={ this.handlePlayGame } />
-            <SettingsBtn func={ this.handleSettings } />
-          </form>
-        </header>
+      <div>
+        <input
+          data-testid="input-gravatar-email"
+          type="email"
+          value={ email }
+          name="email"
+          placeholder="Digite seu email..."
+          onChange={ this.handleChange }
+        />
+        <input
+          data-testid="input-player-name"
+          type="text"
+          value={ userName }
+          name="userName"
+          placeholder="Digite seu nome..."
+          onChange={ this.handleChange }
+          autoComplete="off"
+        />
+        <button
+          data-testid="btn-play"
+          type="button"
+          disabled={ isDisabled }
+          onClick={ this.handleSubmit }
+        >
+          Jogar
+        </button>
+        <Link to="/config">
+          <button type="button" data-testid="btn-settings">
+            Configurações
+          </button>
+        </Link>
       </div>
     );
   }
 }
-
-const mapDispatchToProps = (dispatch) => ({
-  handlePlayerName: (name) => dispatch(setPlayerName(name)),
-  handlePlayerEmail: (email) => dispatch(setPlayerEmail(email)),
-});
-
 Login.propTypes = {
-  handlePlayerName: PropTypes.func.isRequired,
-  handlePlayerEmail: PropTypes.func.isRequired,
+  history: PropTypes.objectOf.isRequired,
+  saveNamePlayer: PropTypes.func.isRequired,
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  saveNamePlayer: (name) => dispatch(saveName(name)),
+});
 export default connect(null, mapDispatchToProps)(Login);
