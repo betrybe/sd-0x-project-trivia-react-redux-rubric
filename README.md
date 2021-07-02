@@ -255,6 +255,16 @@ Esses testes não consideram o layout de maneira geral, mas sim os atributos e i
 
 warning: **O OBJETIVO DESSE PROJETO É UTILIZAR REACT COM REDUX, PORTANTO, NO LOCALSTORAGE DEVE EXISTIR APENAS TRÊS CHAVES (STATE, TOKEN E RANKING), QUE SERÃO VERIFICADAS EM ALGUNS TESTES** :warning:
 
+### Dica: desativando testes
+
+Para rodar apenas um teste, basta a utilização da função `.only` após o describe. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
+
+![image](only-all-green.png)
+
+Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `test`.
+
+![image](only-one-green.png)
+
 ---
 
 ### API de Trivia
