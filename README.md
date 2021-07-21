@@ -19,11 +19,9 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto:](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver:](#antes-de-começar-a-desenvolver)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-    - [Revisando um pull request](#revisando-um-pull-request)
 - [Como desenvolver](#como-desenvolver)
     - [Linter](#linter)
     - [Execução de testes de requisito](#execução-de-testes-de-requisito)
@@ -58,6 +56,8 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
         - [19. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;](#19-ao-mudar-o-valor-do-dropdown-categoria-apenas-perguntas-da-categoria-selecionada-devem-aparecer-para-a-pessoa-que-está-jogando-essa-configuração-será-identificada-pela-chave-category-no-retorno-da-api)
         - [20. Ao mudar o valor do dropdown dificuldade, apenas perguntas da dificuldade selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave difficulty no retorno da API;](#20-ao-mudar-o-valor-do-dropdown-dificuldade-apenas-perguntas-da-dificuldade-selecionada-devem-aparecer-para-a-pessoa-que-está-jogando-essa-configuração-será-identificada-pela-chave-difficulty-no-retorno-da-api)
         - [21. Ao mudar o valor do dropdown tipo, apenas perguntas do tipo selecionado devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave type no retorno da API.](#21-ao-mudar-o-valor-do-dropdown-tipo-apenas-perguntas-do-tipo-selecionado-devem-aparecer-para-a-pessoa-que-está-jogando-essa-configuração-será-identificada-pela-chave-type-no-retorno-da-api)
+- [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
 
 ---
@@ -91,9 +91,9 @@ Lembre-se que você pode consultar nosso conteúdo sobre
 
 ## O que deverá ser desenvolvido
 
-Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_. Confira o Slack para saber como acessar o quadro! Para viver um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará. A partir dessas demandas, teremos uma aplicação onde a pessoa usuária poderá:
+Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demandas definidas em um quadro _Kanban_. Confira o Slack para saber como acessar o quadro! Para viver um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará. A partir dessas demandas, teremos uma aplicação onde a pessoa usuária poderá:
 
-  - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), ter sua foto associada ao perfil de usuária.
+  - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), ter sua foto associada ao perfil da pessoa usuária.
   - Acessar a página referente ao jogo, onde se deverá escolher uma das respostas disponíveis para cada uma das perguntas apresentadas. A resposta deve ser marcada antes do contador de tempo chegar a zero, caso contrário a resposta deverá ser considerada errada.
   - Ser redirecionada, após 5 perguntas respondidas, para a tela de score, onde o texto mostrado depende do número de acertos.
   - Visualizar a página de ranking, se quiser, ao final de cada jogo.
@@ -122,7 +122,7 @@ Você pode acessar um **protótipo** completo da interface desejada para o proje
 ## Antes de começar a desenvolver:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-trivia-react-redux-rubric.git`.
+  * `git clone https://github.com/tryber/sd-0x-project-trivia-react-redux-rubric.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-0x-project-trivia-react-redux-rubric`
   * Vá para a branch do seu grupo, com `git checkout main-group-XX && git pull`, onde `XX` é o número do seu grupo. Exemplos: `main-group-1`, `main-group-22`.
@@ -187,27 +187,6 @@ Você pode acessar um **protótipo** completo da interface desejada para o proje
 
 ---
 
-## Depois de terminar o desenvolvimento (opcional)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-:warning: **Lembre-se que garantir que todas as issues comentadas pelo Linter estão resolvidas!** :warning:
-
-### Revisando um pull request
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
----
-
 # Como desenvolver
 
 Este repositório **já conta com uma `main-group` para cada grupo**, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
@@ -221,16 +200,17 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
 
 ⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
 
-
 Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. Confira o _Slack_ para saber como acessar o quadro! É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
 
-Além disso, você verá que os requisitos do projeto tem, além das observações técnicas e do que será validado, descrições tais quais se veriam em um projeto real. **É muito importante ser capaz de ler descrições como essa e transformá-las em produtos ou, se houver dúvida, saber tirar tais dúvidas!** Seguimos à disposição no Slack para isso.
+Além disso, você verá que os requisitos do projeto tem, além das observações técnicas e do que será validado, descrições tais quais se veriam em um projeto real. **É muito importante ser capaz de ler descrições como essas e transformá-las em produtos ou, se houver dúvida, saber tirar tais dúvidas!** Seguimos à disposição no Slack para isso.
 
 Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Ele também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante.
 
 ---
 
-### Linter
+## Linter
+
+Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
 
 Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint` e `StyleLint`. Para rodar o linter localmente no seu projeto, execute os comandos abaixo:
 
@@ -238,18 +218,26 @@ Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mai
 npm run lint
 npm run lint:styles
 ```
-
+Caso ainda fique alguma dúvida, você pode consultar nosso conteúdo sobre [`ESLint`](https://app.betrybe.com/course/real-life-engineer/eslint)
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 ---
 
-### Execução de testes de requisito
+## Execução de testes de requisito
 
 Os testes deste projeto foram feitos utilizando o [Cypress](https://www.cypress.io/how-it-works/). É utilizada nos testes a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura) para testes de layout. Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução, por exemplo.
 
 Para o projeto ser validado, todos os testes de comportamento devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do Cypress que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam. Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
 
 Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
+
+## Execução de um teste específico
+
+Para executar somente uma `spec` de testes, você pode selecionar qual delas você deseja após executar o comando `npm run cy:open`. Além disto você pode rodar todas as `specs` clicando no botão `Run all specs`.
+
+![img](./cypress-specs.jpeg)
 
 **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
 
@@ -292,7 +280,7 @@ Esse endpoint te retornará o token que vai ser utilizado nas requisições segu
 }
 ```
 
-Paga pegar as perguntas, você deve realizar um GET request para o seguinte endpoint:
+Para pegar as perguntas, você deve realizar um GET request para o seguinte endpoint:
 
 ```
 https://opentdb.com/api.php?amount=${quantidade-de-perguntas-retornadas}&token=${seu-token-aqui}
@@ -383,6 +371,23 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 ```
 ---
 
+### Usando o Trello como ferramenta kanban
+
+Uma forma para seu grupo organizar as atividades e dividir as tarefas é através de um modelo de kanban. A Trybe disponibiliza um [board pré-configurado para vocês](https://trello.com/b/uqNKeveW/front-end-projeto-trivia) duplicarem no [Trello](https://trello.com/).
+
+![img](trello.gif)
+
+Para duplicar, basta seguir os passos:
+
+- Acesse o [link do board](https://trello.com/b/uqNKeveW/front-end-projeto-trivia)
+- Abra o menu no canto superior direito
+- Selecione "copiar quadros"
+- Defina o time do seu grupo e um título para o board
+- Clique em `criar`
+- Personalize seu novo kanban!
+
+---
+
 ### Grupos de prioridade
 
 Os requisitos são organizados por **grupos de prioridade por tela**. O objetivo é que o grupo possa se organizar melhor para que uma pessoa não fique totalmente dependente de outra para começar uma tarefa de outra tela. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
@@ -447,7 +452,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 #### 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
 
-  **PRIORIDADE 0** - Criar a tela de login contendo as informações de nome e email, onde a pessoa que joga deve conseguir escrever seu nome e email nos inputs e o botão de jogar deve estar desabilitado caso não tenha alguma dessas informações.
+  **PRIORIDADE 0** - Criar a tela de login contendo as informações de nome e email, onde a pessoa que joga deve conseguir escrever seu nome e email nos inputs e o botão de jogar ("Play") deve estar desabilitado caso não tenha alguma dessas informações.
   
 Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que os demais possam ser feitos paralelamente!
 
@@ -455,34 +460,34 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * A pessoa que joga deve conseguir escrever seu nome no input de texto
   * A pessoa que joga deve conseguir escrever seu email no input de email
-  * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
+  * O botão "Play" deve ser desabilitado caso email e/ou nome não estejam preenchidos
   * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
   * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
-  * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
+  * O botão "Play" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
 
   **O que será avaliado**
 
-  * Escreve o nome da pessoa jogadora
-  * Escreve o email da pessoa jogadora
-  * Botão Jogar desabilitado quando pessoa jogadora não preencher nenhum campo
-  * Botão Jogar desabilitado quando pessoa jogadora escrever apenas o nome
-  * Botão Jogar desabilitado quando pessoa jogadora escrever apenas o email
-  * Botão Jogar habilitado quando pessoa jogadora preencher os campos de nome e email
+  * Será validado se é possível escrever o nome da pessoa jogadora
+  * Será validado se é possível escrever o email da pessoa jogadora
+  * Será validado se o botão "Play" está desabilitado quando a pessoa jogadora não preencher nenhum campo
+  * Será validado se o botão "Play" está desabilitado quando a pessoa jogadora escrever apenas o nome
+  * Será validado se o botão "Play" está desabilitado quando a pessoa jogadora escrever apenas o email
+  * Será validado se o botão "Play" está habilitado quando a pessoa jogadora preencher os campos de nome e email
 
 #### 2. Crie o botão de iniciar o jogo
 
-  **PRIORIDADE 1** - O botão "Jogar" deve fazer requisição para a API para obter o token e redirecionar a pessoa para tela de jogo
+  **PRIORIDADE 1** - O botão "Play" deve fazer requisição para a API para obter o token e redirecionar a pessoa para tela de jogo
 
   **Observações técnicas**
 
-  * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
-  * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
+  * Após clicar no botão "Play", a pessoa deve ser redirecionada para a tela do jogo
+  * Ao clicar no botão "Play", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
   * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
   * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
   **O que será avaliado**
 
-  * Inicia jogo salvando um token de jogador
+  * Será validado se ao clicar no botão "Play" o jogo é iniciado salvando um token de jogador
 
 #### 3. Crie um botão que leva a pessoa para tela de configuração
 
@@ -495,8 +500,8 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * O botão deve existir na página
-  * A tela de configurações deve possuir um título
+  * Será validado se o botão existe na página
+  * Será validado se a tela de configurações possui um título
 
 ### Tela de jogo
 
@@ -512,9 +517,9 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * A imagem do Gravatar está presente no header
-  * O nome da pessoa está presente no header
-  * O placar zerado está presente no header
+  * Será validado se a imagem do Gravatar está presente no header
+  * Será validado se o nome da pessoa está presente no header
+  * Será validado se o placar zerado está presente no header
 
 #### 5. Crie a página de jogo que deve conter as informações relacionadas à pergunta
 
@@ -533,9 +538,9 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   
   **O que será avaliado**
 
-  * A categoria da pergunta está presente
-  * O texto da pergunta está presente
-  * As alternativas devem estar presentes
+  * Será validado se a categoria da pergunta está presente
+  * Será validado se o texto da pergunta está presente
+  * Será validado se as alternativas estão presentes
 
 #### 6. Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta
 
@@ -547,7 +552,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * A quantidade de respostas corretas deve ser 1
+  * Será validado se a quantidade de alternativas corretas é 1
 
 #### 7. Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas
 
@@ -560,10 +565,11 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * Verifica cor da alternativa correta quando acerta a questão
-  * Verifica a cor das alternativas incorretas quando acerta a questão
-  * Verifica cor da alternativa correta quando erra a questão
-  * Verifica a cor das alternativas incorretas quando erra a questão
+  * Será validado se a cor da alternativa correta é "rgb(6, 240, 15)" ao acertar a questão
+  * Será validado se a cor das alternativas incorretas é "rgb(255, 0, 0)" ao acertar a questão
+  * Será validado se a cor da alternativa correta é "rgb(6, 240, 15)" ao errar a questão
+  * Será validado se a cor das alternativas incorretas é "rgb(255, 0, 0)" ao errar a questão
+
 
 #### 8. Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder
 
@@ -580,8 +586,8 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * Aguarda 5 segundos e responde a alternativa correta
-  * Aguarda mais de 30 segundos para responder
+  * Será validado se é possível aguardar 5 segundos e responder a alternativa correta
+  * Será validado se ao aguardar mais de 30 segundos para responder, todos botões estão desabilitados
 
 #### 9. Crie o placar com as seguintes características:
 
@@ -596,23 +602,23 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
    **O que será avaliado**
 
-   * Soma pontos ao acertar uma questão
-   * Não soma pontos ao errar uma questão
+   * Será validado se os pontos são somados ao acertar uma questão
+   * Será validado se os pontos não são somados ao errar uma questão
 
-#### 10. Crie um botão de "próxima" que apareça após a resposta ser dada
+#### 10. Crie um botão de próxima ("next") que apareça após a resposta ser dada
 
-  **PRIORIDADE 3** - Deve aparecer um botão de "Próxima" (pergunta) após a resposta ser dada
+  **PRIORIDADE 3** - Deve aparecer um botão de próxima ("Next") (pergunta) após a resposta ser dada
 
   **Observações técnicas**
 
-  * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
+  * O botão "Next" deve possuir o atributo `data-testid` com o valor `btn-next`
   * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
   **O que será avaliado**
 
-  * O botão de próxima pergunta não deve ser visível o início do jogo
-  * Botão de próxima pergunta é visível quando a pergunta é respondida corretamente
-  * Botão de próxima pergunta é visível quando a pergunta é respondida incorretamente
+  * Será validado se o botão "Next" não é visível no início do jogo
+  * Será validado se o botão "Next" é visível quando a pergunta é respondida corretamente
+  * Será validado se o botão "Next" é visível quando a pergunta é respondida incorretamente
 
 #### 11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total
 
@@ -628,9 +634,9 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * Acerta todas as perguntas
-  * Erra todas as perguntas
-  * Redireciona para a tela de _feedback_ após a quinta pergunta
+  * Será validado se os pontos são somados de forma correta ao acertar todas as respostas
+  * Será validado se os pontos são somados de forma correta ao errar todas as respostas
+  * Será validado se a pessoa usuária é redirecionada para a tela de _feedback_ após a quinta pergunta
 
 ### Tela de feedback
 
@@ -646,9 +652,9 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * A imagem do Gravatar está presente no header
-  * O nome da pessoa está presente no header
-  * O placar com o valor atual está presente no header
+  * Será validado se a imagem do Gravatar está presente no header
+  * Será validado se o nome da pessoa está presente no header
+  * Será validado se o placar com o valor atual está presente no header
 
 #### 13. Crie a mensagem de _feedback_ para ser exibida a pessoa usuária
 
@@ -656,15 +662,15 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **Observações técnicas**
 
-  * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
-  * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
+  * A mensagem deve ser "Could be better..." caso a pessoa acerte menos de 3 perguntas
+  * A mensagem deve ser "Well Done!" caso a pessoa acerte 3 perguntas ou mais
   * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
   **O que será avaliado**
 
-  * Acertou menos de 3 perguntas
-  * Acertou 3 perguntas
-  * Acertou mais de 3 perguntas
+  * Será validado se ao acertar menos de 3 perguntas a mensagem de _feedback_ é "Could be better..."
+  * Será validado se ao acertar 3 perguntas a mensagem de _feedback_ é "Well Done!"
+  * Será validado se ao acertar mais de 3 perguntas a mensagem de _feedback_ é "Well Done!"
 
 #### 14. Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária
 
@@ -674,20 +680,20 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
 
   **O que será avaliado**
-  * Não acertou nenhuma pergunta
-  * Acertou 2 perguntas
-  * Acertou 4 perguntas
+  * Será validado se o número exibido é correto quando a pessoa usuária não acerta nenhuma pergunta
+  * Será validado se o número exibido é correto quando a pessoa usuária acerta 2 perguntas
+  * Será validado se o número exibido é correto quando a pessoa usuária acerta 4 perguntas
 
 #### 15. Crie a opção para a pessoa jogadora poder jogar novamente
 
-  **PRIORIDADE 3** - A pessoa terá a opção "Jogar novamente", que ao ser clicada, levará para a tela de inicial
+  **PRIORIDADE 3** - A pessoa terá a opção jogar novamente ("Play Again"), que ao ser clicada, levará para a tela de inicial
 
-  * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início (login)
-  * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
+  * Ao clicar no botão "Play Again", a pessoa deve ser redirecionada para a tela de início (login)
+  * O botão para "Play Again" deve possuir o atributo `data-testid` com o valor `btn-play-again`
 
   **O que será avaliado**
 
-  * A pessoa deve ser redirecionada para tela inicial
+  * Será validado se a pessoa é redirecionada para tela inicial ao clicar no botão "Play Again"
 
 #### 16. Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_
 
@@ -695,13 +701,13 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **Observações técnicas**
 
-  * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
+  * Ao clicar no botão "Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
   * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
   * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
   **O que será avaliado**
 
-  * A pessoa deve ser redirecionada para tela de ranking
+  * Será validado se ao clicar no botão "Ranking" a pessoa é redirecionada para tela de ranking
 
 ### Tela de ranking
 
@@ -719,9 +725,9 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * Deve existir uma pessoa no _ranking_
-  * Devem existir duas pessoas no _ranking_
-  * O _ranking_ deve ser ordenado pela pontuação
+  * Será validado se existe uma pessoa no _ranking_
+  * Será validado se existem duas pessoas no _ranking_
+  * Será validado se o _ranking_ é ordenado pela pontuação
 
 #### 18. Crie um botão para ir ao início
 
@@ -734,7 +740,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   **O que será avaliado**
 
-  * Volta para a tela inicial
+  * Será validado se ao clicar no botão a pessoa volta para a tela inicial
 
 ### Extra não avaliativo: Tela de configurações
 
@@ -748,11 +754,33 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 ---
 
+## Depois de terminar o desenvolvimento (opcional)
+
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+### Revisando um pull request
+
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
+
+#VQV
+
+---
+
 # Avisos finais
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
